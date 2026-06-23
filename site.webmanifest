@@ -1,0 +1,20 @@
+{
+  "name": "ROBOTICBOX",
+  "short_name": "ROBOTICBOX",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#07111d",
+  "theme_color": "#07111d",
+  "icons": [
+    {
+      "src": "assets/logos/roboticbox-logo.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/logos/roboticbox-logo.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

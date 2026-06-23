@@ -1,0 +1,674 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>로보틱박스 자동화 이송 적용 공정 | 중량물 이송·전동밸런서·Jig</title>
+  <meta
+    name="description"
+    content="중량물 취급, 포장 전후 이송, 팔레트 이동, 전동밸런서, Jig, Robot Vision 적용 공정을 정리했습니다."
+  >
+  <meta name="keywords" content="로보틱박스, ROBOTICBOX, 중량물 이송 자동화, 제조공정 이송 자동화, 작업자 보조형 이송, 전동밸런서, Moon Lifter, Jig, Gripper, Rail KBK, Robot Vision, 팔레트 이동, 포장 전후 이송">
+  <meta name="robots" content="index,follow,max-image-preview:large">
+  <meta name="naver-site-verification" content="4148f82d68b490d91d9e4d6e940d328bdb842723">
+  <link rel="canonical" href="https://roboticbox-transfer.netlify.app/automation-logistics.html">
+  <link rel="icon" href="assets/logos/roboticbox-logo.png" type="image/png">
+  <link rel="apple-touch-icon" href="assets/logos/roboticbox-logo.png">
+  <link rel="manifest" href="site.webmanifest">
+  <meta property="og:locale" content="ko_KR">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="ROBOTICBOX">
+  <meta property="og:title" content="로보틱박스 자동화 이송 적용 공정 | 중량물 이송·전동밸런서·Jig">
+  <meta property="og:description" content="중량물 취급, 포장 전후 이송, 팔레트 이동, 전동밸런서, Jig, Robot Vision 적용 공정을 정리했습니다.">
+  <meta property="og:url" content="https://roboticbox-transfer.netlify.app/automation-logistics.html">
+  <meta property="og:image" content="https://roboticbox-transfer.netlify.app/assets/images/featured/wooyoung-hydraulic-5.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="로보틱박스 자동화 이송 적용 공정 | 중량물 이송·전동밸런서·Jig">
+  <meta name="twitter:description" content="중량물 취급, 포장 전후 이송, 팔레트 이동, 전동밸런서, Jig, Robot Vision 적용 공정을 정리했습니다.">
+  <meta name="twitter:image" content="https://roboticbox-transfer.netlify.app/assets/images/featured/wooyoung-hydraulic-5.jpg">
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": "https://roboticbox-transfer.netlify.app/#organization",
+          "name": "ROBOTICBOX",
+          "url": "https://roboticbox-transfer.netlify.app/",
+          "logo": "https://roboticbox-transfer.netlify.app/assets/logos/roboticbox-logo.png"
+        },
+        {
+          "@type": "Service",
+          "@id": "https://roboticbox-transfer.netlify.app/automation-logistics.html#service",
+          "name": "ROBOTICBOX 자동화 이송 솔루션",
+          "serviceType": "제조공정 중량물·부품 이송 자동화 솔루션",
+          "provider": {
+            "@id": "https://roboticbox-transfer.netlify.app/#organization"
+          },
+          "areaServed": {
+            "@type": "Country",
+            "name": "Korea"
+          },
+          "description": "Jig(Gripper), 작업자 보조형 이송 장치, Rail / KBK, Robot, AI Vision을 공정 조건에 맞게 조합해 제조공정 이송 문제를 설계·구축하는 서비스"
+        },
+        {
+          "@type": "WebPage",
+          "@id": "https://roboticbox-transfer.netlify.app/automation-logistics.html#webpage",
+          "url": "https://roboticbox-transfer.netlify.app/automation-logistics.html",
+          "name": "제조공정 이송 자동화 솔루션 | ROBOTICBOX",
+          "description": "공정 조건 검토, Jig/Gripper 구조 가이드, 적용 공정 사례, 자료를 확인할 수 있는 자동화 이송 솔루션 상세 페이지",
+          "primaryImageOfPage": {
+            "@type": "ImageObject",
+            "url": "https://roboticbox-transfer.netlify.app/assets/images/featured/wooyoung-hydraulic-5.jpg"
+          },
+          "about": {
+            "@id": "https://roboticbox-transfer.netlify.app/automation-logistics.html#service"
+          },
+          "inLanguage": "ko-KR"
+        }
+      ]
+    }
+  </script>
+  <script>document.documentElement.classList.add('js-enabled');</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+<body data-page="automation">
+  <header class="site-header" id="top">
+    <div class="container header-inner">
+      <a class="brand" href="index.html" aria-label="ROBOTICBOX 홈으로 이동">
+        <img class="brand-logo" src="assets/logos/roboticbox-logo.png" alt="ROBOTICBOX 로고">
+        <span class="brand-text">Manufacturing AI &amp; Automation</span>
+      </a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <nav class="site-nav" id="site-nav" aria-label="주요 메뉴">
+        <a href="#guide">구조 가이드</a>
+        <a href="#cases">적용 공정</a>
+        <a href="#media">대표 장면</a>
+        <a href="#modules">구성 요소</a>
+        <a href="#resources">자료 보기</a>
+        <a href="automation-logistics.html" data-page-link="automation">자동화 이송</a>
+        <a href="contact.html" data-page-link="contact" class="nav-cta">공정 진단 문의</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="section subpage-hero">
+      <div class="container subpage-grid">
+        <div class="subpage-copy automation-hero-copy reveal">
+          <p class="eyebrow">PROCESS TRANSFER AUTOMATION DETAIL</p>
+          <h1>자동화 이송 적용 공정과 구조 가이드</h1>
+          <p class="hero-text">
+            로보틱박스(ROBOTICBOX)는 중량물 이송, 작업자 보조형 이송, 전동밸런서, Robot · AI Vision, 특수 Jig 공정을 실제 적용 가능성 기준으로 정리했습니다.
+            구조 가이드와 적용 공정 사례를 먼저 확인한 뒤, 필요한 자료와 문의로 이어질 수 있습니다.
+          </p>
+          <ul class="hero-bullet-list">
+            <li><strong>공정 조건 진단</strong> 대상물을 어떻게 잡고 어디까지 이동시키며 어떤 자세로 안착시킬지 먼저 정의합니다.</li>
+            <li><strong>Jig(Gripper) 방식 검토</strong> 철계 중량물은 Magnetic Type Jig를, 비자성체·특수 형상은 Clamp / Vacuum / Custom Jig를 검토합니다.</li>
+            <li><strong>단계적 확장 구조</strong> 작업자 보조형 이송에서 Robot · AI Vision 연계까지 개선 효과가 큰 구간부터 정리합니다.</li>
+          </ul>
+          <div class="hero-actions">
+            <a class="button primary" href="contact.html">공정 적용성 진단 문의하기</a>
+            <a class="button secondary" href="#cases">적용 공정 보기</a>
+          </div>
+        </div>
+
+        <div class="subpage-visual reveal">
+          <div class="subpage-panel image-panel">
+            <div class="visual-topline">
+              <span>Integrated Field Composition</span>
+              <span>ROBOTICBOX SI</span>
+            </div>
+            <div class="visual-mosaic automation-mosaic">
+              <article class="visual-photo-card visual-photo-card-wide">
+                <picture>
+                  <source srcset="assets/images/optimized/hero-hydraulic-1600.webp" type="image/webp">
+                  <img src="assets/images/featured/wooyoung-hydraulic-5.jpg" alt="유압실린더 제조 공정 현장 사진" width="1600" height="2133" loading="eager" decoding="async" fetchpriority="high">
+                </picture>
+                <div class="photo-chip">유압실린더 제조 공정</div>
+              </article>
+              <article class="visual-photo-card">
+                <picture>
+                  <source srcset="assets/images/optimized/hero-magnetic-jig-900.webp" type="image/webp">
+                  <img src="assets/images/featured/product-magnetic-with-moonlifter.png" alt="작업자 보조형 이송 장치와 Magnetic Type Jig 조합 이미지" width="1000" height="1232" loading="eager" decoding="async">
+                </picture>
+                <div class="photo-chip">Worker Assist + Magnetic Type Jig</div>
+              </article>
+              <article class="visual-photo-card">
+                <picture>
+                  <source srcset="assets/images/optimized/hero-plastic-jig-900.webp" type="image/webp">
+                  <img src="assets/images/featured/product-plastic-box-jig.jpg" alt="플라스틱 박스 지그 제품 이미지" width="1000" height="1333" loading="eager" decoding="async">
+                </picture>
+                <div class="photo-chip">Clamp / Custom Jig</div>
+              </article>
+            </div>
+            <div class="insight-grid">
+              <article class="insight-card">
+                <span>Field Logic</span>
+                <p>장비보다 먼저 공정 경계와 작업자 개입 정도를 판단합니다.</p>
+              </article>
+              <article class="insight-card">
+                <span>Standard Package</span>
+                <p>표준형 조합 위에 지그, 레일, 안전 옵션을 더하는 구조입니다.</p>
+              </article>
+              <article class="insight-card">
+                <span>Applied Processes</span>
+                <p>실제 대응해온 공정 유형을 기준으로 적용 가능 범위를 빠르게 좁힙니다.</p>
+              </article>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="guide">
+      <div class="container">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Structure &amp; Jig Guide</p>
+          <h2>공정 조건에 따라 작업자 보조형 이송 장치, Jig(Gripper), Rail / KBK 구조를 함께 설계합니다.</h2>
+          <p>
+            특정 장비 하나만으로 끝나는 프로젝트는 많지 않습니다.
+            ROBOTICBOX는 작업자 보조형 이송, 팔레트 간 이동, 반복 투입·취출, 반전 동작, 유체 취급, 천장형 구조까지 공정 조건에 맞는 Jig(Gripper)와 Rail / KBK 구조를 함께 설계해 실제 사용 가능한 형태로 제안합니다.
+            <br><br>
+            Jig는 작업물을 직접 잡는 주먹 역할의 기구물입니다. Magnetic Lift는 철계 중량물에 적용되는 Jig 유형 중 하나이며, 공정 조건에 따라 클램프형, 진공형, 반전형, 맞춤형 Jig로 확장할 수 있습니다.
+          </p>
+        </div>
+
+        <div class="guide-grid">
+          <article class="gallery-card guide-card reveal">
+            <picture>
+              <source srcset="assets/images/optimized/hero-magnetic-jig-900.webp" type="image/webp">
+              <img class="gallery-image" src="assets/images/featured/product-magnetic-with-moonlifter.png" alt="작업자 보조형 이송 장치와 Magnetic Type Jig 조합 이미지" width="1000" height="1232" loading="lazy" decoding="async">
+            </picture>
+            <div class="gallery-copy">
+              <span class="card-tag">Assist Structure</span>
+              <h3>작업자 보조형 이송 구조</h3>
+              <p>사람이 계속 개입해야 하는 공정에는 작업자 보조형 이송 장치와 대상물 조건에 맞는 Jig(Gripper)를 결합해 중량물 취급 부담을 줄입니다.</p>
+            </div>
+          </article>
+          <article class="gallery-card guide-card reveal">
+            <picture>
+              <source srcset="assets/images/optimized/guide-bolt-pallet-900.webp" type="image/webp">
+              <img class="gallery-image" src="assets/images/refferences/대표 사진/중대형 볼트너트 팔레트 간 이송.jpg" alt="KBK 레일 구조가 적용된 볼트너트 이송 사진" width="1100" height="825" loading="lazy" decoding="async">
+            </picture>
+            <div class="gallery-copy">
+              <span class="card-tag">Rail / KBK</span>
+              <h3>팔레트 간 이송 구조</h3>
+              <p>철계 중량물을 반복 이동시키는 공정은 KBK나 경량 레일 구조를 결합해 작업 동선을 정리합니다.</p>
+            </div>
+          </article>
+          <article class="gallery-card guide-card reveal">
+            <picture>
+              <source srcset="assets/images/optimized/guide-semiconductor-inversion-900.webp" type="image/webp">
+              <img class="gallery-image" src="assets/images/refferences/대표 사진/코팅 공정 이송 및 챔버 내 반전진입.jpg" alt="반도체 챔버 반전 구조 적용 사진" width="1000" height="1333" loading="lazy" decoding="async">
+            </picture>
+            <div class="gallery-copy">
+              <span class="card-tag">Ceiling Rail</span>
+              <h3>천장형 레일·반전 구조</h3>
+              <p>반전 각도와 진입 경로가 까다로운 공정은 천장형 레일과 맞춤형 반전 지그를 함께 검토합니다.</p>
+            </div>
+          </article>
+          <article class="gallery-card guide-card reveal">
+            <picture>
+              <source srcset="assets/images/optimized/guide-plastic-box-jig-900.webp" type="image/webp">
+              <img class="gallery-image" src="assets/images/products/플라스틱 박스용 지그.jpg" alt="맞춤형 지그 제품 사진" width="1000" height="1333" loading="lazy" decoding="async">
+            </picture>
+            <div class="gallery-copy">
+              <span class="card-tag">Custom Jig</span>
+              <h3>맞춤형 Jig(Gripper) 구조</h3>
+              <p>Jig는 작업물을 파지·흡착·클램핑하는 그리퍼 역할의 기구물입니다. 철계 중량물은 Magnetic Type Jig로, 비자성체·박스·표면 민감 제품은 Clamp Type, Vacuum Type, Custom Type Jig로 검토합니다. 180도 반전, 반복 투입, 유체 취급, 자세 유지, 정밀 안착 등 공정 특이점이 있는 경우에는 별도 구조 옵션을 함께 설계합니다.</p>
+            </div>
+          </article>
+        </div>
+
+        <article class="feature-card guide-link-card reveal">
+          <span class="card-tag">Official Reference</span>
+          <h3>Moon Lifter의 지브·설치 구조는 공식 페이지에서도 함께 확인하실 수 있습니다.</h3>
+          <p>
+            ROBOTICBOX는 공정 적용 관점으로 구조를 재해석해 제안드리고, 기본 제품 정보와 지브·설치 타입은
+            UNIPULSE 본사 Moon Lifter 페이지를 함께 참고하실 수 있도록 연결해 두었습니다.
+          </p>
+          <div class="resource-actions">
+            <a class="button primary" href="https://www.robotec.tokyo/moonlifter/jig.php" target="_blank" rel="noopener noreferrer">Moon Lifter 공식 구조 보기</a>
+            <a class="button secondary" href="assets/catalogs/moonlifter-catalog-kr.pdf" target="_blank" rel="noopener noreferrer">Moon Lifter 카탈로그 보기</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="cases">
+      <div class="container">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Applied Fields &amp; Processes</p>
+          <h2>ROBOTICBOX는 중량물 이송·부품 취급·검사·적재·반전·포장 연계 공정을 반복적으로 검토해 왔습니다.</h2>
+          <p>
+            업종은 달라도 현장의 이송 문제는 비슷한 구조를 가집니다.
+            ROBOTICBOX는 대상물, 작업자 개입 정도, 이송 거리, 설치 공간을 기준으로 공정을 분류하고 유사 조건의 표준 패키지로 빠르게 검토합니다.
+          </p>
+        </div>
+
+        <div class="case-group-grid">
+          <article class="feature-card case-group-card reveal">
+            <span class="card-tag">Assist Transfer Cases</span>
+            <h3>작업자 보조형 이송 · Jig(Gripper) · Rail 적용 공정</h3>
+            <p>사람이 계속 개입해야 하는 중량물 취급 공정, 팔레트 간 이동, 반복 투입·취출, 반전·천장형 구조 공정을 중심으로 대응합니다. 철계 중량물은 Magnetic Type Jig를 우선 검토하고, 형상·재질·표면 조건과 공정 특이점에 따라 Clamp Type, Vacuum Type, Custom Type Jig로 확장합니다. Moon Lifter는 작업자 보조형 이송 구간에 적용 가능한 주요 장치 중 하나입니다.</p>
+
+            <div class="case-stack">
+              <article class="case-story-card">
+                <span class="card-tag">유압실린더 제조</span>
+                <h4>용접 제조 공정 이송 / 핵심 제조 공정 내 이송 구조 개선</h4>
+                <p>작업자 보조형 이송 장치와 대상물 조건에 맞는 Jig(Gripper)를 적용해 중량물 취급 부담과 공정 간 단절을 함께 줄인 사례입니다. 철계 부품의 경우 Magnetic Type Jig를 우선 검토할 수 있습니다.</p>
+                <div class="catalog-meta">
+                  <span>자동화 전 공정 Gripper 적용</span>
+                  <span>ML-240K</span>
+                  <span>Magnetic Type Jig</span>
+                  <span>박스 클램핑 Jig</span>
+                </div>
+                <figure class="case-figure">
+                  <picture>
+                    <source srcset="assets/images/optimized/case-hydraulic-transfer-900.webp" type="image/webp">
+                    <img src="assets/images/refferences/대표 사진/유압실린더 제조 핵심 제조 공정 내 이송 구조 개선.jpg" alt="유압실린더 제조 핵심 제조 공정 내 이송 구조 개선 사진" width="1100" height="1467" loading="lazy" decoding="async">
+                  </picture>
+                  <figcaption>대표 적용 장면: 핵심 제조 구간에 작업자 보조형 이송 구조와 전용 Jig(Gripper)를 적용해 중량물 취급 부담과 공정 간 단절을 함께 줄인 사례입니다.</figcaption>
+                </figure>
+              </article>
+
+              <article class="case-story-card">
+                <span class="card-tag">유압기기</span>
+                <h4>완제품 포장 이송</h4>
+                <p>완제품을 포장 설비 구간으로 부드럽게 연결하기 위해 작업자 보조형 이송 장치, Jig(Gripper), Rail 시스템을 결합한 사례입니다. 제품 내부 유체, 무게중심, 기울기 제한 등 공정 특이점이 있는 경우 별도 옵션으로 검토합니다.</p>
+                <div class="catalog-meta">
+                  <span>ML-40K</span>
+                  <span>Magnetic Type Jig</span>
+                  <span>경량 Rail 구조물</span>
+                </div>
+                <figure class="case-figure">
+                  <picture>
+                    <source srcset="assets/images/optimized/case-hydraulic-packaging-900.webp" type="image/webp">
+                    <img src="assets/images/refferences/대표 사진/유압기기 완제품 포장 이송.jpg" alt="유압기기 완제품 포장 이송 사진" width="1100" height="825" loading="lazy" decoding="async">
+                  </picture>
+                  <figcaption>대표 적용 장면: 완제품을 포장 설비 구간으로 부드럽게 연결하기 위해 보조이송 구조와 레일 시스템을 결합한 사례입니다.</figcaption>
+                </figure>
+              </article>
+
+              <article class="case-story-card">
+                <span class="card-tag">조선 / 기자재</span>
+                <h4>중대형 볼트·너트 팔레트 간 이송</h4>
+                <p>철계 중량물을 반복 취급하는 공정에서 Magnetic Type Jig와 Rail / KBK 구조를 조합해 이송 흐름을 단순화한 사례입니다.</p>
+                <div class="catalog-meta">
+                  <span>ML-240K</span>
+                  <span>Magnetic Type Jig</span>
+                  <span>KBK 레일 구조물</span>
+                </div>
+                <figure class="case-figure">
+                  <picture>
+                    <source srcset="assets/images/optimized/guide-bolt-pallet-900.webp" type="image/webp">
+                    <img src="assets/images/refferences/대표 사진/중대형 볼트너트 팔레트 간 이송.jpg" alt="중대형 볼트너트 팔레트 간 이송 사진" width="1100" height="825" loading="lazy" decoding="async">
+                  </picture>
+                  <figcaption>대표 적용 장면: 철계 중량물을 반복 취급하는 공정에서 Magnetic Type Jig와 레일 구조를 조합해 이송 흐름을 단순화한 사례입니다.</figcaption>
+                </figure>
+              </article>
+
+              <article class="case-story-card">
+                <span class="card-tag">반도체 부품</span>
+                <h4>코팅 공정 이송 및 챔버 내 반전·진입</h4>
+                <p>반전 각도와 진입 구조가 까다로운 공정에서 맞춤형 Jig(Gripper), 반전 구조, 천장형 Rail 구조를 함께 설계한 사례입니다.</p>
+                <div class="catalog-meta">
+                  <span>MLT-60K 2대 병렬</span>
+                  <span>반전 Jig</span>
+                  <span>천장형 경량 Rail</span>
+                </div>
+                <figure class="case-figure">
+                  <picture>
+                    <source srcset="assets/images/optimized/guide-semiconductor-inversion-900.webp" type="image/webp">
+                    <img src="assets/images/refferences/대표 사진/코팅 공정 이송 및 챔버 내 반전진입.jpg" alt="코팅 공정 이송 및 챔버 내 반전진입 사진" width="1000" height="1333" loading="lazy" decoding="async">
+                  </picture>
+                  <figcaption>대표 적용 장면: 챔버 내부 진입 전 반전 각도와 고정부 위치를 함께 고려해 천장형 구조와 반전 지그를 설계한 사례입니다.</figcaption>
+                </figure>
+              </article>
+
+              <article class="case-story-card">
+                <span class="card-tag">방산 / 군수</span>
+                <h4>탄피 철통 이송 공정</h4>
+                <p>반복 취급과 안전성이 중요한 공정에서 작업자 보조형 이송 장치와 Jig(Gripper)를 결합해 작업자 부담을 줄인 사례입니다. 내용물 유무, 충격 민감도, 이송 자세 제한 등 특수 조건을 함께 검토합니다.</p>
+                <div class="catalog-meta">
+                  <span>ML-40K</span>
+                  <span>Magnetic Type Jig</span>
+                  <span>경량 Rail 구조물</span>
+                </div>
+                <figure class="case-figure">
+                  <picture>
+                    <source srcset="assets/images/optimized/case-shell-case-transfer-900.webp" type="image/webp">
+                    <img src="assets/images/refferences/대표 사진/탄피 철통 이송 공정.png" alt="탄피 철통 이송 공정 사진" width="1080" height="1920" loading="lazy" decoding="async">
+                  </picture>
+                  <figcaption>대표 적용 장면: 반복 취급과 안전성이 중요한 공정에서 작업자 보조형 이송 구조를 적용해 취급 부담을 줄인 사례입니다.</figcaption>
+                </figure>
+              </article>
+            </div>
+          </article>
+
+          <article class="feature-card case-group-card reveal">
+            <span class="card-tag">Robot · AI Vision · Gripper 연계 공정</span>
+            <h3>Robot · AI Vision · Gripper 연계 공정</h3>
+            <p>반복성과 정형도가 높은 가공·검사·조립·적재 공정은 Robot, AI Vision, 전용 Gripper 조합으로 자동화합니다. 철계 부품은 Magnetic Type Gripper를 적용할 수 있고, 제품 형상과 표면 조건에 따라 Clamp Type, Vacuum Type, Custom Type Gripper로 확장할 수 있습니다.</p>
+
+            <div class="case-stack">
+              <article class="case-story-card">
+                <span class="card-tag">자동차부품 제조</span>
+                <h4>디스크브레이크 가공 공정 자동화</h4>
+                <p>반복성과 정형도가 높은 가공 공정은 로봇 자동화와 AI Vision 연계 구조로 확장하기 좋은 대표 유형입니다.</p>
+                <div class="catalog-meta">
+                  <span>로봇 자동화</span>
+                  <span>전용 Gripper</span>
+                </div>
+                <figure class="case-figure">
+                  <picture>
+                    <source srcset="assets/images/optimized/case-disk-brake-900.webp" type="image/webp">
+                    <img src="assets/images/refferences/대표 사진/디스크브레이크 가공 공정 자동화.png" alt="디스크브레이크 가공 공정 자동화 사진" width="1080" height="1920" loading="lazy" decoding="async">
+                  </picture>
+                  <figcaption>대표 적용 장면: 반복 가공 공정에서 Robot과 Gripper를 결합해 이송과 적재 흐름을 자동화한 사례입니다.</figcaption>
+                </figure>
+              </article>
+
+              <article class="case-story-card">
+                <span class="card-tag">구동펌프 제조</span>
+                <h4>소형 펌프 조립 횡전개 라인 자동화</h4>
+                <p>조립과 이송이 반복되는 라인형 공정에서 공정 흐름을 단순화하고 필요한 그리퍼 구성을 정리하는 유형입니다.</p>
+                <div class="catalog-meta">
+                  <span>Gripper 횡전개</span>
+                </div>
+                <figure class="case-figure">
+                  <picture>
+                    <source srcset="assets/images/optimized/case-small-pump-900.webp" type="image/webp">
+                    <img src="assets/images/refferences/대표 사진/소형 펌프 조립.png" alt="소형 펌프 조립 횡전개 라인 자동화 사진" width="1100" height="619" loading="lazy" decoding="async">
+                  </picture>
+                  <figcaption>대표 적용 장면: 조립 라인에서 필요한 그리퍼 구성을 횡전개해 반복 이송 공정을 정리한 사례입니다.</figcaption>
+                </figure>
+              </article>
+              <article class="case-story-card case-story-card-media">
+                <div class="case-story-layout">
+                  <div class="case-story-content">
+                    <span class="card-tag">검사·적재·분류 공정</span>
+                    <h4>반복 검사·적재·분류 공정</h4>
+                    <p>일정 리듬으로 반복되는 검사·적재·분류 공정은 로봇과 AI Vision을 결합해 생산성과 일관성을 높이기 좋은 대표 유형입니다. 제품 위치 확인, 양불 판정, 적재 패턴 제어까지 라인 조건에 맞춰 연계할 수 있습니다.</p>
+                    <div class="catalog-meta">
+                      <span>AI Vision</span>
+                      <span>로봇 적재</span>
+                      <span>라인 연계</span>
+                    </div>
+                  </div>
+                  <figure class="case-story-figure-inline">
+                    <picture>
+                      <source srcset="assets/images/optimized/case-ai-vision-loading-900.webp" type="image/webp">
+                      <img src="assets/images/refferences/ai 비전 검사 로봇 적재 공정 (2).png" alt="AI Vision과 로봇을 활용한 반복 검사 적재 분류 공정 예시" width="1100" height="619" loading="lazy" decoding="async">
+                    </picture>
+                  </figure>
+                </div>
+              </article>
+              <article class="case-story-card case-story-card-media">
+                <div class="case-story-layout">
+                  <div class="case-story-content">
+                    <span class="card-tag">안전 관제 연계</span>
+                    <h4>AI Vision 기반 작업자 안전 관제 및 공정 모니터링</h4>
+                    <p>이송 자동화와 함께 작업자 동선, 위험 구역, 공정 상태를 함께 모니터링해야 하는 구간에서 적용 가능성을 검토합니다. 작업자 접근, 장비 동작 구간, 위험 영역 침범 여부를 AI Vision 기반으로 감지해 안전성과 운영성을 함께 높일 수 있습니다.</p>
+                    <div class="catalog-meta">
+                      <span>AI Safety</span>
+                      <span>작업자 동선</span>
+                      <span>위험 구역 모니터링</span>
+                    </div>
+                  </div>
+                  <figure class="case-story-figure-inline">
+                    <picture>
+                      <source srcset="assets/images/optimized/case-ai-safety-monitoring-900.webp" type="image/webp">
+                      <img src="assets/images/refferences/ai 비전 검사 로봇 적재 공정 (1).png" alt="AI Vision 기반 작업자 안전 관제 및 공정 모니터링 예시" width="1100" height="619" loading="lazy" decoding="async">
+                    </picture>
+                  </figure>
+                </div>
+              </article>
+            </div>
+          </article>
+        </div>
+
+        <div class="section-actions reveal">
+          <p class="case-note">분야가 달라도 대상물 형상, 작업자 개입 정도, 기존 설비와의 호환성 조건이 유사하면 비슷한 구조로 빠르게 검토할 수 있습니다.</p>
+          <div class="resource-actions">
+            <a class="button secondary" href="#resources">현장 영상과 자료 보기</a>
+            <a class="button primary" href="contact.html">공정 적용성 진단 문의하기</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="media">
+      <div class="container">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Representative Media</p>
+          <h2>대표 현장과 영상으로 공정 개선 구조를 빠르게 이해할 수 있습니다.</h2>
+          <p>
+            실제 납품 현장과 대표 영상을 통해, 작업자 보조형 이송과 구조 설계가 어떤 톤으로 구현되는지 확인하실 수 있습니다.
+          </p>
+        </div>
+
+        <div class="media-showcase">
+          <article class="showcase-stage reveal">
+            <div class="showcase-photo field-showcase">
+              <picture>
+                <source srcset="assets/images/optimized/hero-hydraulic-1600.webp" type="image/webp">
+                <img src="assets/images/featured/wooyoung-hydraulic-5.jpg" alt="유압실린더 제조 공정 적용 현장 이미지" width="1600" height="2133" loading="lazy" decoding="async">
+              </picture>
+              <div class="showcase-overlay">
+                <span class="card-tag">Representative Photo</span>
+                <h3>유압실린더 제조 공정 적용 사례</h3>
+                <p>작업자 취급 구간에 작업자 보조형 이송 장치와 전용 Jig(Gripper)를 적용해 중량물 취급 부담을 줄이고 공정 간 이송 흐름을 안정화하는 구조를 보여줍니다.</p>
+              </div>
+            </div>
+          </article>
+
+          <div class="media-side-stack">
+            <article class="media-side-card reveal">
+              <div class="media-side-copy">
+                <span class="card-tag">Field Review</span>
+                <h3>검토 시 가장 먼저 확인하는 항목</h3>
+                <p>공정 적용 가능 범위는 아래 조건을 기준으로 빠르게 정리합니다.</p>
+                <ul class="media-checklist">
+                  <li>대상물의 중량, 형상, 재질과 표면 민감도</li>
+                  <li>작업자 개입 정도와 반복 작업 빈도</li>
+                  <li>180도 반전, 반복 투입·취출, 유체 취급 등 공정 특이점</li>
+                  <li>천장 구조, 레일 설치 공간, 유지보수 조건과 안전 조건</li>
+                </ul>
+              </div>
+            </article>
+
+            <article class="media-side-card video-feature-card reveal">
+              <a class="video-feature-thumb" href="https://www.youtube.com/watch?v=_KmC1EQQYEU" target="_blank" rel="noopener noreferrer" aria-label="대표 영상 새 창에서 보기">
+                <img src="https://i.ytimg.com/vi/_KmC1EQQYEU/hqdefault.jpg" alt="대표 영상 썸네일" width="480" height="360" loading="lazy" decoding="async">
+                <span class="video-play">Play</span>
+              </a>
+              <div class="media-side-copy">
+                <span class="card-tag">Representative Video</span>
+                <h3>대표 영상</h3>
+                <p>자동화 이송 구조와 ROBOTICBOX의 통합 제안 메시지를 가장 빠르게 이해할 수 있는 대표 영상입니다.</p>
+                <div class="resource-actions">
+                  <a class="button primary" href="https://www.youtube.com/watch?v=_KmC1EQQYEU" target="_blank" rel="noopener noreferrer">영상 보기</a>
+                  <a class="button secondary" href="contact.html">공정 진단 문의</a>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="modules">
+      <div class="container">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Core Tools</p>
+          <h2>현장에서 실제로 반복 사용되는 구성 요소</h2>
+          <p>
+            모든 프로젝트가 같은 장비로 끝나지는 않지만, 실제 납품 공정에서는 아래 구성 요소가 반복적으로 활용됩니다.
+            ROBOTICBOX는 이 요소들을 공정 조건에 맞게 조합해 실제 운영 가능한 이송 구조를 설계합니다.
+          </p>
+        </div>
+
+        <div class="module-grid module-grid-five">
+          <article class="feature-card reveal">
+            <span class="module-number">01</span>
+            <h3>Jig / Gripper</h3>
+            <p>작업물을 직접 파지·흡착·클램핑하는 주먹 역할의 기구물입니다. 대상물 조건에 따라 Magnetic Type, Clamp Type, Vacuum Type, Custom Type으로 구성합니다.</p>
+          </article>
+          <article class="feature-card reveal">
+            <span class="module-number">02</span>
+            <h3>Worker Assist Device</h3>
+            <p>작업자 인접 공정에서 중량물 이송을 보조하는 장치입니다. Moon Lifter는 전동밸런서 방식의 작업자 보조형 이송 장치로, 하중 제어와 이동 보조를 통해 유연한 핸들링을 가능하게 합니다.</p>
+          </article>
+          <article class="feature-card reveal">
+            <span class="module-number">03</span>
+            <h3>Rail / KBK Structure</h3>
+            <p>작업 범위와 이동 동선을 잡아주는 어깨와 몸통 역할의 구조입니다. 경량 레일, KBK, 천장형 구조를 통해 작업 흐름을 실제 현장에 맞게 풀어냅니다.</p>
+          </article>
+          <article class="feature-card reveal">
+            <span class="module-number">04</span>
+            <h3>Robot &amp; AI Vision</h3>
+            <p>반복 공정의 자동화와 검사·적재 고도화가 필요한 구간에 선택적으로 결합합니다.</p>
+          </article>
+          <article class="feature-card reveal">
+            <span class="module-number">05</span>
+            <h3>Safety / Interlock / Control</h3>
+            <p>작업자와 설비가 함께 움직이는 구간에서 안전 조건, 인터락, 센서, 제어 흐름을 함께 설계합니다.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="resources">
+      <div class="container">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Resources</p>
+          <h2>대표 영상과 회사소개 자료로 검토 속도를 높일 수 있습니다.</h2>
+          <p>
+            전시회, 영업 미팅, 내부 검토에 바로 활용할 수 있도록 대표 영상과 핵심 PDF 자료를 함께 정리했습니다.
+          </p>
+        </div>
+
+        <div class="video-grid">
+          <article class="video-card reveal">
+            <a class="video-thumb" href="https://www.youtube.com/watch?v=_KmC1EQQYEU" target="_blank" rel="noopener noreferrer" aria-label="대표 영상 열기">
+              <img src="https://i.ytimg.com/vi/_KmC1EQQYEU/hqdefault.jpg" alt="대표 영상 썸네일" width="480" height="360" loading="lazy" decoding="async">
+              <span class="video-play">YouTube</span>
+            </a>
+            <span class="card-tag">Featured</span>
+            <h3>대표 영상</h3>
+            <p>공정 중심 자동화 이송 솔루션의 전체 방향과 통합 SI 메시지를 확인할 수 있습니다.</p>
+          </article>
+          <article class="video-card reveal">
+            <a class="video-thumb" href="https://www.youtube.com/watch?v=bpkC846GZMo" target="_blank" rel="noopener noreferrer" aria-label="현장 레퍼런스 영상 1 열기">
+              <img src="https://i.ytimg.com/vi/bpkC846GZMo/hqdefault.jpg" alt="현장 레퍼런스 영상 1 썸네일" width="480" height="360" loading="lazy" decoding="async">
+              <span class="video-play">YouTube</span>
+            </a>
+            <span class="card-tag">Reference 01</span>
+            <h3>현장 레퍼런스 영상 01</h3>
+            <p>실제 보조이송 구조와 작업 흐름을 이해하는 데 도움이 되는 영상입니다.</p>
+          </article>
+          <article class="video-card reveal">
+            <a class="video-thumb" href="https://www.youtube.com/watch?v=FX7zL0zu5nU" target="_blank" rel="noopener noreferrer" aria-label="현장 레퍼런스 영상 2 열기">
+              <img src="https://i.ytimg.com/vi/FX7zL0zu5nU/hqdefault.jpg" alt="현장 레퍼런스 영상 2 썸네일" width="480" height="360" loading="lazy" decoding="async">
+              <span class="video-play">YouTube</span>
+            </a>
+            <span class="card-tag">Reference 02</span>
+            <h3>현장 레퍼런스 영상 02</h3>
+            <p>공정 개선 아이디어와 현장 적용 톤을 빠르게 확인할 수 있는 자료입니다.</p>
+          </article>
+          <article class="video-card reveal">
+            <a class="video-thumb" href="https://www.youtube.com/watch?v=NWG5lxGCrxE" target="_blank" rel="noopener noreferrer" aria-label="현장 레퍼런스 영상 3 열기">
+              <img src="https://i.ytimg.com/vi/NWG5lxGCrxE/hqdefault.jpg" alt="현장 레퍼런스 영상 3 썸네일" width="480" height="360" loading="lazy" decoding="async">
+              <span class="video-play">YouTube</span>
+            </a>
+            <span class="card-tag">Reference 03</span>
+            <h3>현장 레퍼런스 영상 03</h3>
+            <p>자동화 이송 솔루션의 운용 감각과 현장 분위기를 살펴볼 수 있는 참고 영상입니다.</p>
+          </article>
+        </div>
+
+        <div class="catalog-grid" style="margin-top: 24px;">
+          <article class="catalog-card reveal">
+            <span class="card-tag">Company Profile</span>
+            <h3>로보틱박스 회사소개서</h3>
+            <p>제조 AI, 스마트팩토리, AI 안전관제, 자동화 이송 사업 방향을 한 번에 확인할 수 있는 기본 자료입니다.</p>
+            <div class="catalog-meta">
+              <span>PDF</span>
+              <span>회사소개</span>
+            </div>
+            <div class="resource-actions">
+              <a class="button secondary" href="assets/catalogs/roboticbox-company-profile.pdf" target="_blank" rel="noopener noreferrer">PDF 보기</a>
+              <a class="button primary" href="assets/catalogs/roboticbox-company-profile.pdf" download>다운로드</a>
+            </div>
+          </article>
+          <article class="catalog-card reveal">
+            <span class="card-tag">Integrated Catalog</span>
+            <h3>로보틱박스 통합 카탈로그</h3>
+            <p>공정 제안 방향과 주요 히스토리, 전체 솔루션 스토리를 함께 정리한 핵심 자료입니다.</p>
+            <div class="catalog-meta">
+              <span>PDF</span>
+              <span>통합 자료</span>
+            </div>
+            <div class="resource-actions">
+              <a class="button secondary" href="assets/catalogs/roboticbox-total-catalog.pdf" target="_blank" rel="noopener noreferrer">PDF 보기</a>
+              <a class="button primary" href="assets/catalogs/roboticbox-total-catalog.pdf" download>다운로드</a>
+            </div>
+          </article>
+          <article class="catalog-card reveal">
+            <span class="card-tag">Moon Lifter</span>
+            <h3>Moon Lifter 카탈로그</h3>
+            <p>작업자 보조형 이송과 핸들링 공정에 적합한 Moon Lifter 구성과 사양을 확인할 수 있습니다.</p>
+            <div class="catalog-meta">
+              <span>PDF</span>
+              <span>Moon Lifter</span>
+            </div>
+            <div class="resource-actions">
+              <a class="button secondary" href="assets/catalogs/moonlifter-catalog-kr.pdf" target="_blank" rel="noopener noreferrer">PDF 보기</a>
+              <a class="button primary" href="assets/catalogs/moonlifter-catalog-kr.pdf" download>다운로드</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="cta-banner reveal">
+          <div class="cta-banner-copy">
+            <p class="eyebrow">Process Diagnosis</p>
+            <h2>우리 공정에 어떤 이송 조합이 맞는지, 먼저 적용 가능성부터 진단해보겠습니다.</h2>
+            <p>
+              공정 시작점과 종료점, 대상물 무게와 형상, 재질, 현재 작업 방식과 공정 특이점만 정리해주셔도
+              ROBOTICBOX가 표준 패키지 기준의 1차 검토안과 현장 맞춤 확장 방향을 제안할 수 있습니다.
+            </p>
+          </div>
+          <div class="cta-banner-actions">
+            <a class="button primary" href="contact.html">공정 적용성 진단 문의하기</a>
+            <a class="button secondary" href="#packages">공정 이송 표준형 보기</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <img class="footer-logo" src="assets/logos/roboticbox-logo.png" alt="ROBOTICBOX 로고">
+        <p>Manufacturing AI / Smart Factory / AI Safety Monitoring / Automated Material Transfer</p>
+      </div>
+      <p>&copy; <span id="current-year"></span> ROBOTICBOX. All rights reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>
