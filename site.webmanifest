@@ -1,7 +1,7 @@
 {
   "name": "ROBOTICBOX",
   "short_name": "ROBOTICBOX",
-  "start_url": "/",
+  "start_url": "./",
   "display": "standalone",
   "background_color": "#07111d",
   "theme_color": "#07111d",
