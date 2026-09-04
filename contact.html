@@ -90,13 +90,15 @@
     <section class="section subpage-hero contact-page-hero">
       <div class="container subpage-grid contact-page-grid">
         <div class="subpage-copy reveal">
-          <p class="eyebrow">PROCESS DIAGNOSIS</p>
-          <h1>공정 적용성 진단 문의</h1>
+          <p class="eyebrow">SCM FAIR 2026 · PROCESS DIAGNOSIS</p>
+          <h1>전시 상담 및 공정 적용성 문의</h1>
           <p class="hero-text">
             ROBOTICBOX는 단순 제품 문의보다 공정 검토 관점에서 상담을 진행합니다.
             공정 시작점과 종료점, 대상물 특성, 작업자 개입 정도, 공정 특이점을 알려주시면 작업자 보조형, 공정 이송 표준형, Robot · AI Vision 연계형 중 어떤 방식이 적합한지 먼저 판단합니다.
             <br><br>
             특정 장비 적용 여부보다 대상물을 어떻게 잡고, 어디까지 이동시키며, 어떤 자세로 안착시킬지까지 함께 검토합니다.
+            <br><br>
+            전시 부스 방문 전후로 공정 사진, 대상물 정보, 이송 거리, 중량, 작업 영상을 공유해주시면 1차 적용 방향을 검토드립니다.
           </p>
           <div class="hero-actions">
             <a class="button primary" href="tel:+821076834931">전화로 바로 연결</a>
@@ -196,6 +198,20 @@
               <label>
                 하루 반복 횟수
                 <input type="text" name="repeat_count" placeholder="예: 50회 / 300회" required>
+              </label>
+              <label>
+                검토 희망 장비
+                <input type="text" name="preferred_equipment" placeholder="예: Moon Lifter / Magnetic Type Jig / AMR">
+              </label>
+              <label>
+                전시 상담 희망 여부
+                <select name="exhibition_consultation">
+                  <option value="">선택해주세요</option>
+                  <option value="SCM FAIR 부스 방문 상담 희망">SCM FAIR 부스 방문 상담 희망</option>
+                  <option value="전시 전 사전 상담 희망">전시 전 사전 상담 희망</option>
+                  <option value="전시 후 후속 상담 희망">전시 후 후속 상담 희망</option>
+                  <option value="일반 공정 적용성 진단">일반 공정 적용성 진단</option>
+                </select>
               </label>
               <fieldset class="contact-field-wide option-fieldset">
                 <legend>검토 희망 구조</legend>

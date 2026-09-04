@@ -122,6 +122,18 @@ img {
   font-size: clamp(2rem, 3vw, 3rem);
 }
 
+.section-heading h2,
+.hero-copy h1,
+.subpage-copy h1,
+.feature-card h3,
+.exhibition-card h3,
+.catalog-card h3,
+.contact-point h3 {
+  word-break: keep-all;
+  overflow-wrap: normal;
+  line-break: strict;
+}
+
 .section-heading p,
 .hero-text,
 .feature-card p,
@@ -198,14 +210,21 @@ img {
 .site-nav {
   display: flex;
   align-items: center;
+  flex: 0 0 auto;
+  flex-wrap: nowrap;
   gap: 12px;
 }
 
 .site-nav a {
+  flex: 0 0 auto;
   padding: 10px 14px;
   color: var(--text-muted);
   font-size: 0.96rem;
   border-radius: 999px;
+  white-space: nowrap;
+  word-break: keep-all;
+  overflow-wrap: normal;
+  line-break: strict;
   transition: color 180ms ease, background 180ms ease;
 }
 
@@ -457,6 +476,97 @@ img {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 18px;
+}
+
+.exhibition-banner {
+  display: grid;
+  grid-template-columns: minmax(0, 1.28fr) minmax(280px, 0.72fr);
+  gap: 28px;
+  align-items: center;
+  padding: 34px;
+  border: 1px solid rgba(116, 230, 212, 0.28);
+  border-radius: var(--radius-lg);
+  background:
+    radial-gradient(circle at top right, rgba(116, 230, 212, 0.16), transparent 36%),
+    linear-gradient(135deg, rgba(12, 28, 47, 0.98), rgba(7, 15, 29, 0.98));
+  box-shadow: var(--shadow);
+}
+
+.exhibition-banner h2 {
+  margin: 0 0 14px;
+  font-family: "Space Grotesk", "Noto Sans KR", sans-serif;
+  font-size: clamp(1.7rem, 3vw, 2.5rem);
+  line-height: 1.18;
+}
+
+.exhibition-banner p {
+  margin: 0;
+  color: var(--text-muted);
+  line-height: 1.75;
+}
+
+.exhibition-banner-side {
+  padding: 22px;
+  border: 1px solid rgba(116, 230, 212, 0.17);
+  border-radius: var(--radius-md);
+  background: rgba(255, 255, 255, 0.035);
+}
+
+.exhibition-grid,
+.magnetic-case-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.exhibition-card,
+.magnetic-case-card {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  background: linear-gradient(180deg, rgba(18, 28, 42, 0.96), rgba(8, 14, 26, 0.98));
+  box-shadow: var(--shadow);
+}
+
+.exhibition-card {
+  min-height: 210px;
+  padding: 24px;
+}
+
+.exhibition-card h3,
+.magnetic-case-copy h3 {
+  margin: 0 0 10px;
+  font-family: "Space Grotesk", "Noto Sans KR", sans-serif;
+  font-size: 1.12rem;
+}
+
+.exhibition-card p,
+.magnetic-case-copy p {
+  margin: 0;
+  color: var(--text-muted);
+  line-height: 1.7;
+}
+
+.magnetic-case-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.magnetic-case-card > img {
+  display: block;
+  width: 100%;
+  height: 250px;
+  padding: 14px;
+  background:
+    radial-gradient(circle at top right, rgba(54, 168, 255, 0.12), transparent 46%),
+    rgba(255, 255, 255, 0.025);
+  object-fit: contain;
+  object-position: center center;
+}
+
+.magnetic-case-copy {
+  padding: 0 24px 24px;
 }
 
 .process-group-grid,
@@ -2109,6 +2219,11 @@ img {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
+  .exhibition-grid,
+  .magnetic-case-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
   .history-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -2128,7 +2243,8 @@ img {
   .contact-page-grid,
   .contact-cta-grid,
   .story-spread,
-  .media-showcase {
+  .media-showcase,
+  .exhibition-banner {
     grid-template-columns: 1fr;
   }
 
@@ -2156,7 +2272,7 @@ img {
   }
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1080px) {
   .site-nav {
     position: absolute;
     top: calc(100% + 10px);
@@ -2219,6 +2335,8 @@ img {
   .guide-grid,
   .video-grid,
   .catalog-grid,
+  .exhibition-grid,
+  .magnetic-case-grid,
   .history-grid,
   .story-module-grid,
   .story-point-grid,
@@ -2377,6 +2495,7 @@ img {
 
   .visual-panel,
   .subpage-panel,
+  .exhibition-banner,
   .architecture-shell,
   .contact-form,
   .cta-banner,
@@ -2434,6 +2553,10 @@ img {
   .visual-photo-card,
   .image-ribbon-card {
     min-height: 220px;
+  }
+
+  .magnetic-case-card > img {
+    height: 230px;
   }
 
   .showcase-photo {
